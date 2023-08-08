@@ -1,0 +1,5 @@
+../Core/Src/freertos.c:129:6:twist_callback	24	static
+../Core/Src/freertos.c:138:6:twist_publish_callback	24	static
+../Core/Src/freertos.c:159:6:MX_FREERTOS_Init	8	static
+../Core/Src/freertos.c:209:6:StartDefaultTask	512	static
+../Core/Src/freertos.c:296:6:StartControl_task	48	static

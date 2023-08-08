@@ -1,0 +1,18 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/begin/ros2_ws/install/vector3_subscribe/lib/python3.8/site-packages",
+        "/home/begin/ros2_ws/install/object_detection/lib/python3.8/site-packages",
+        "/home/begin/ros2_ws/install/diffbot_description/lib/python3.8/site-packages",
+        "/home/begin/microros_ws/agent_ws/install/micro_ros_msgs/lib/python3.8/site-packages",
+        "/home/begin/microros_ws/agent_ws/install/drive_base_msgs/lib/python3.8/site-packages",
+        "/opt/ros/foxy/lib/python3.8/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/begin/ros2_ws/install/vector3_subscribe/lib/python3.8/site-packages",
+        "/home/begin/ros2_ws/install/object_detection/lib/python3.8/site-packages",
+        "/home/begin/ros2_ws/install/diffbot_description/lib/python3.8/site-packages",
+        "/home/begin/microros_ws/agent_ws/install/micro_ros_msgs/lib/python3.8/site-packages",
+        "/home/begin/microros_ws/agent_ws/install/drive_base_msgs/lib/python3.8/site-packages",
+        "/opt/ros/foxy/lib/python3.8/site-packages"
+    ]
+}

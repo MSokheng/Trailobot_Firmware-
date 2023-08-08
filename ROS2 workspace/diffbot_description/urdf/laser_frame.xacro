@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+
+<link name="laser_frame">
+  <inertial>
+    <origin xyz="0.04376484795242852 -1.4743405693421839e-05 0.019298839750102326" rpy="0 0 0"/>
+    <mass value="1.2982579906067602"/>
+    <inertia ixx="0.000619" iyy="0.00059" izz="0.000863" ixy="0.0" iyz="0.0" ixz="1.7e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.324779 -0.0 -0.399508" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/laser_frame.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+  </visual>
+  <collision>
+    <origin xyz="0.324779 -0.0 -0.399508" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/laser_frame.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="laser_frame_joint" type="fixed">
+  <origin xyz="0.414779 0.0 0.399508" rpy="0 0 0"/>
+  <parent link="chassis"/>
+  <child link="laser_frame"/>
+</joint>
+
+</robot>

@@ -1,0 +1,278 @@
+<?xml version="1.0" ?>
+<robot name="diffbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="laser_frame.xacro" />
+
+<link name="base_link"/>
+<link name="base_footprint"/>
+
+<link name="chassis">
+  <inertial>
+    <origin xyz="0.04449761671327678 -5.020656660003861e-05 0.1287808583350702" rpy="0 0 0"/>
+    <mass value="90.2440086954087"/>
+    <inertia ixx="6.687604" iyy="10.992206" izz="16.260831" ixy="0.004442" iyz="-0.001604" ixz="-0.804662"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/chassis.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+      <material name="amber" >
+        <color rgba="0.996078431372549 0.7019607843137254 0.03137254901960784 1.0" />
+      </material>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/chassis.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera">
+  <inertial>
+    <origin xyz="-0.013050205703403817 -0.032741927084470594 0.010066458249258947" rpy="0 0 0"/>
+    <mass value="0.35127199280616256"/>
+    <inertia ixx="0.000227" iyy="3.2e-05" izz="0.000229" ixy="1e-06" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.469779 -0.037329 -0.255605" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/camera.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.469779 -0.037329 -0.255605" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/camera.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="top_plate">
+  <inertial>
+    <origin xyz="0.39576729919266035 -0.00010836803397268681 0.0007502202057759755" rpy="0 0 0"/>
+    <mass value="6.035666692441485"/>
+    <inertia ixx="0.27137" iyy="0.387794" izz="0.659161" ixy="6.6e-05" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.470221 -0.0 -0.199508" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/top_plate.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+  </visual>
+  <collision>
+    <origin xyz="0.470221 -0.0 -0.199508" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/top_plate.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster_2">
+  <inertial>
+    <origin xyz="0.021849143148478023 9.922003460677287e-05 -0.041940545289794" rpy="0 0 0"/>
+    <mass value="1.2902947158309073"/>
+    <inertia ixx="0.001055" iyy="0.001612" izz="0.000899" ixy="1e-06" iyz="2e-06" ixz="-0.000384"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.430221 0.265 -0.060258" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/caster_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+  </visual>
+  <collision>
+    <origin xyz="0.430221 0.265 -0.060258" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/caster_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster_4">
+  <inertial>
+    <origin xyz="0.021849143148512717 9.922003460649531e-05 -0.04194054528979526" rpy="0 0 0"/>
+    <mass value="1.2902947158309073"/>
+    <inertia ixx="0.001055" iyy="0.001612" izz="0.000899" ixy="1e-06" iyz="2e-06" ixz="-0.000384"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.430221 -0.265 -0.060258" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/caster_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+  </visual>
+  <collision>
+    <origin xyz="0.430221 -0.265 -0.060258" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/caster_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster_3">
+  <inertial>
+    <origin xyz="0.022426077846473602 9.922003456402928e-05 -0.04163529875777808" rpy="0 0 0"/>
+    <mass value="1.2902947158309073"/>
+    <inertia ixx="0.001066" iyy="0.001612" izz="0.000889" ixy="1e-06" iyz="2e-06" ixz="-0.000382"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.300777 0.259 -0.063535" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/caster_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.300777 0.259 -0.063535" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/caster_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster_1">
+  <inertial>
+    <origin xyz="0.02156727126016189 9.92200345611427e-05 -0.04208624637518513" rpy="0 0 0"/>
+    <mass value="1.2902947158309073"/>
+    <inertia ixx="0.00105" iyy="0.001612" izz="0.000904" ixy="1e-06" iyz="2e-06" ixz="-0.000385"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.299811 -0.259 -0.061268" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.299811 -0.259 -0.061268" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_wheel">
+  <inertial>
+    <origin xyz="3.043083743950459e-07 0.023468305900506886 -4.7907333001750985e-06" rpy="0 0 0"/>
+    <mass value="8.930304198932719"/>
+    <inertia ixx="0.028215" iyy="0.053254" izz="0.028215" ixy="0.0" iyz="-1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.03685 -0.240882 -0.068034" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/right_wheel.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.03685 -0.240882 -0.068034" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/right_wheel.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_wheel">
+  <inertial>
+    <origin xyz="5.1485459125200084e-08 -0.023468121653127533 -5.439411757582335e-06" rpy="0 0 0"/>
+    <mass value="8.930304198932717"/>
+    <inertia ixx="0.028215" iyy="0.053254" izz="0.028215" ixy="-0.0" iyz="1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.037733 0.240882 -0.064907" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/left_wheel.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+  </visual>
+  <collision>
+    <origin xyz="-0.037733 0.240882 -0.064907" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://diffbot_description/meshes/left_wheel.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="camera_joint" type="fixed">
+  <origin xyz="0.469779 0.037329 0.255605" rpy="0 0 0"/>
+  <parent link="chassis"/>
+  <child link="camera"/>
+</joint>
+
+<joint name="top_plate_joint" type="fixed">
+  <origin xyz="-0.470221 0.0 0.199508" rpy="0 0 0"/>
+  <parent link="chassis"/>
+  <child link="top_plate"/>
+</joint>
+
+<joint name="caster_2_joint" type="fixed">
+  <origin xyz="-0.430221 -0.265 0.060258" rpy="0 0 0"/>
+  <parent link="chassis"/>
+  <child link="caster_2"/>
+</joint>
+
+<joint name="caster_4_joint" type="fixed">
+  <origin xyz="-0.430221 0.265 0.060258" rpy="0 0 0"/>
+  <parent link="chassis"/>
+  <child link="caster_4"/>
+</joint>
+
+<joint name="caster_3_joint" type="fixed">
+  <origin xyz="0.300777 -0.259 0.063535" rpy="0 0 0"/>
+  <parent link="chassis"/>
+  <child link="caster_3"/>
+</joint>
+
+<joint name="caster_1_joint" type="fixed">
+  <origin xyz="0.299811 0.259 0.061268" rpy="0 0 0"/>
+  <parent link="chassis"/>
+  <child link="caster_1"/>
+</joint>
+
+<joint name="right_wheel_joint" type="continuous">
+  <origin xyz="0.03685 0.240882 0.068034" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_wheel"/>
+  <axis xyz="-0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="left_wheel_joint" type="continuous">
+  <origin xyz="0.037733 -0.240882 0.064907" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_wheel"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="chassis_joint" type="fixed">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="chassis"/>
+</joint>
+
+<joint name="base_footprint_joint" type="fixed">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="base_footprint"/>
+</joint>
+
+</robot>
